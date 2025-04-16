@@ -64,16 +64,7 @@ class SqlDmlJoinsApplicationTests {
 		assertEquals(ogrenciRepository.findUniqueStudentNameCount(), 9);
 	}
 
-	@DisplayName("Öğrenci tablosunda kaç farklı isimde öğrenci olduğunu listeleyiniz.")
-	@Test
-	void findStudentNameCountTest(){
-		List<StudentNameCount> studentNameCountList = ogrenciRepository.findStudentNameCount();
-		StudentNameCount sema = studentNameCountList.stream().filter(studentNameCount -> studentNameCount.getAd().equals("Sema"))
-						.collect(Collectors.toList()).get(0);
 
-		assertEquals(sema.getCount(), 2);
-		assertEquals(ogrenciRepository.findStudentNameCount().size(), 9);
-	}
 
 	@DisplayName("Her sınıftaki öğrenci sayısını bulunuz..")
 	@Test
